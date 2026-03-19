@@ -1,1 +1,1 @@
-# Explainable Intrusion Detection - EXID
+# EXplainable Intrusion Detection - EXID
