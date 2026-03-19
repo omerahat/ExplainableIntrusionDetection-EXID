@@ -1,0 +1,39 @@
+.# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data and outputs
+data/*.arff
+data/*.txt
+data/*.csv
+data/*.log
+data/*.tmp
+*.log
+*.tmp
+*.bak
+
+# VSCode / Cursor
+.vscode/
+.history/
+.cursor/
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
