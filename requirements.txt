@@ -13,6 +13,7 @@ importlib-metadata==8.7.1
 importlib-resources==6.5.2
 ipykernel==6.31.0
 ipython==8.18.1
+imbalanced-learn==0.13.0
 jedi==0.19.2
 joblib==1.5.3
 jupyter-client==8.6.3
