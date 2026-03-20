@@ -19,7 +19,7 @@ Additional interpretation from the notebook output:
 - **True Positives (caught anomalies):** 6,939  
 - **False Positives (false alarms):** 264
 
-![Binary Confusion Matrix](path/to/image.png)
+![Binary Confusion Matrix](img/model0_matrix.png)
 
 > **Key takeaway:** The binary stage is conservative against missed benign traffic (high `Normal` recall) while still capturing most malicious activity, creating a reliable first-pass IDS screen.
 
@@ -47,13 +47,13 @@ To counter this, Model 2.1 introduced a targeted intervention stack:
 | **U2R** | 0.22 | 0.43 | **+0.21** | 0.32 | 0.09 | **-0.23** |
 | **Probe** | 1.00 | 1.00 | 0.00 | 0.90 | 0.90 | 0.00 |
 
-![Model 2.1 Confusion Matrix](path/to/image.png)
+![Model 2.1 Confusion Matrix](img/model2_1_matrix.png)
 
 > **Key takeaway:** The maximization protocol substantially increases **rare-attack recall**, especially for `R2L` and `U2R`, but introduces a precision tradeoff for extremely scarce `U2R` samples. This is an intentional security-oriented bias toward surfacing stealth threats.
 
 ## 4) Explainable AI (SHAP) Insights - The "Why"
 
-![Multiclass SHAP Summary Plot](path/to/image.png)
+![Multiclass SHAP Summary Plot](img/model2_shap.png)
 
 SHAP analysis reveals a clear feature-separation pattern in how the model reasons about attack families:
 
