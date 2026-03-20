@@ -17,6 +17,7 @@ The current version is implemented entirely in Jupyter notebooks.
 - [Dataset Requirements](#dataset-requirements)
 - [Run the Pipeline](#run-the-pipeline)
 - [Model Coverage](#model-coverage)
+- [Current Results Snapshot](#current-results-snapshot)
 - [Outputs and Artifacts](#outputs-and-artifacts)
 - [Reproducibility Notes](#reproducibility-notes)
 - [Troubleshooting](#troubleshooting)
@@ -31,6 +32,8 @@ Main stages:
 1. Prepare train/test data with feature engineering and label processing.
 2. Train and evaluate multiple classification variants.
 3. Explain model behavior with SHAP global importance analysis.
+
+For the latest measured metrics and interpretation notes, see `RESULTS.md`.
 
 ## Repository Structure
 
@@ -49,6 +52,7 @@ EXID/
 │   ├── 01_EDA_Feature_Engineering.ipynb
 │   └── 02_Model_Training_and_XAI.ipynb
 ├── requirements.txt
+├── RESULTS.md
 ├── README.md
 └── LICENSE
 ```
@@ -180,6 +184,19 @@ Core libraries used:
 - `shap`
 - `pandas`, `numpy`, `pyarrow`
 
+## Current Results Snapshot
+
+Detailed model outcomes are maintained in `RESULTS.md`.
+
+Highlights from the current version:
+
+- Stage 1 binary filtering (`Normal` vs `Anomaly`) is tuned as a strong first-pass detector.
+- Stage 2 includes an optimized rare-attack recovery setup (`Model 2.1`) with SMOTE-NC, class weights, and threshold overrides.
+- Rare-class detection improves notably for `R2L` and `U2R` recall in the maximized protocol, with expected precision tradeoffs on extremely scarce classes.
+- SHAP analysis is used to explain feature drivers across attack families and support analyst interpretability.
+
+Use `RESULTS.md` as the source of truth for exact metrics tables and narrative interpretation.
+
 ## Outputs and Artifacts
 
 Generated outputs in the current workflow:
@@ -193,6 +210,7 @@ Not currently persisted as standalone files:
 - separate metrics report files
 
 Most metrics and visual outputs are embedded in notebook outputs.
+The curated performance summary is tracked in `RESULTS.md`.
 
 ## Reproducibility Notes
 
